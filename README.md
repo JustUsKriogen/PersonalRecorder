@@ -30,6 +30,14 @@ Licensed under the **MIT License**: free to use, modify, and redistribute, inclu
 
 > Early release: short capture and regression tests pass, but long gaming sessions and every GPU/game combination are not yet validated. See the limitations below.
 
+## Download and run
+
+Download **PersonalRecorder-v0.1.0-win-x64.zip** from the [latest release](https://github.com/JustUsKriogen/PersonalRecorder/releases/latest). Extract the entire ZIP to a folder, then open **PersonalRecorder.exe**. Keep the accompanying files together; do not run the app from inside the ZIP.
+
+The download includes the .NET runtime, so you do **not** need Visual Studio, the .NET SDK, or a separate .NET installation. If Windows reports a missing Visual C++ runtime, install the [Microsoft Visual C++ Redistributable x64](https://aka.ms/vs/17/release/vc_redist.x64.exe). Windows N editions also need the Media Feature Pack.
+
+This is an unsigned early release. A SHA-256 checksum is included with the release assets for verifying the download.
+
 ## Requirements
 
 - Windows 10 version 1903 or newer; Windows 11 recommended.
@@ -61,6 +69,8 @@ dotnet publish src/PersonalRecorder/PersonalRecorder.csproj -c Release -p:Platfo
 ```
 
 The project targets x64 because its recording engine includes native C++/CLI code.
+
+Maintainers can run `./publish-release.ps1` to create a versioned, self-contained ZIP and SHA-256 checksum, including runtime license notices. It pins the runtime patch for reproducibility; update `-RuntimeVersion` when publishing a newer runtime patch. The script requires a fresh output directory for each version.
 
 ## First recording
 
