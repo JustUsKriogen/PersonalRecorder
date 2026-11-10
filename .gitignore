@@ -1,0 +1,15 @@
+**/bin/
+**/obj/
+.vs/
+.build-home/
+.packages/
+artifacts/
+*.user
+.codex/
+.agents/
+.env
+.env.*
+*.mp4
+*.log
+*.diagnostics.txt
+**/smoke-results/
